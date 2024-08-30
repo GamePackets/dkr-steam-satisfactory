@@ -13,7 +13,8 @@ Dedicated Satisfactory server using Docker.
 | stable       | Latest stable release build        |
 | latest       | Latest stable release build        |
 | experimental | Latest experimental release build  |
-* Containers are automatically rebuilt weekly on Tuesday.
+
+* Containers are automatically rebuilt everday at noon.
 
 ## Parameters
 
