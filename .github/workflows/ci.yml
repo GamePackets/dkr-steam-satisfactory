@@ -17,7 +17,10 @@ jobs:
 
     # Build all supported container images
     - name: Build Containers
-      run: make all
+      run: |
+        docker build -t thetestgame/satisfactory:stable -f Dockerfile.Stable .
+        docker build -t thetestgame/satisfactory:latest -f Dockerfile.Latest .
+        docker build -t thetestgame/satisfactory:experimental -f Dockerfile.Experimental .
 
     # Authenticate with DockerHub prior to publishing
     - name: Login to DockerHub
