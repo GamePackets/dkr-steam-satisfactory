@@ -1,0 +1,16 @@
+# Pull our base SteamCMD image
+FROM thetestgame/steam:latest
+
+# Set our required environment variables
+ENV UPDATE_SERVER=1
+ENV PLATFORM=linux
+ENV STEAM_APP_ID=1690800
+ENV STEAM_APP_EXTRAS='-beta public'
+
+# Expose our ports
+EXPOSE 15777
+EXPOSE 15000
+EXPOSE 7777
+
+# Copy our startup script into the container
+COPY custom_server /data/custom_server
