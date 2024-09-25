@@ -40,21 +40,6 @@ jobs:
         docker push thetestgame/satisfactory:latest
         docker push thetestgame/satisfactory:experimental
 
-    # Publish our built container images to the Github Container Registry
-    - name: Publish to Github Container Registry
-      run: |
-        # Authenticate with the Github Container Registry
-        echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
-        # Tag and push the images to the Github Container Registry
-        docker tag thetestgame/satisfactory:stable ghcr.io/thetestgame/satisfactory:stable
-        docker tag thetestgame/satisfactory:latest ghcr.io/thetestgame/satisfactory:latest
-        docker tag thetestgame/satisfactory:experimental ghcr.io/thetestgame/satisfactory:experimental
-
-        docker push ghcr.io/thetestgame/satisfactory:stable
-        docker push ghcr.io/thetestgame/satisfactory:latest
-        docker push ghcr.io/thetestgame/satisfactory:experimental
-
     # Keep the workflow alive
     - uses: gautamkrishnar/keepalive-workflow@v1 # using the workflow with default settings
 
